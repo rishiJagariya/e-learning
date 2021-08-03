@@ -1,5 +1,5 @@
-*.classpath
-*.project
-bin/
-.settings/
-newfile.txt
+Elearning/*.classpath
+Elearning/*.project
+Elearning/bin/
+Elearning/.settings/
+Elearning/target/
