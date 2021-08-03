@@ -20,6 +20,9 @@
 
 		<mapping class="com.elr.Elearning.Cart"/>
 		<mapping class="com.elr.Elearning.Trainer"/>
+		<mapping class="com.elr.Elearning.Enrollment"/>
+		<mapping class="com.elr.Elearning.Student"/>
+		<mapping class="com.elr.Elearning.Auth"/>
 
 
 	</session-factory>

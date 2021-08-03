@@ -75,4 +75,11 @@ public class Cart {
 		this.discount = (10*totalAmount)/100;
 	}
 
+	@Override
+	public String toString() {
+		return "Cart [cartId=" + cartId + ", studentId=" + studentId + ", items=" + items + ", totalAmount="
+				+ totalAmount + ", discount=" + discount + "]";
+	}
+	
+
 }
