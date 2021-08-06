@@ -4,3 +4,9 @@ Elearning/bin/
 Elearning/.settings/
 Elearning/target/
 Elearning/src/main/java/hibernate.cfg.xml
+elearningproj/*.classpath
+elearningproj/*.project
+elearningproj/bin/
+elearningproj/.settings/
+elearningproj/target/
+elearningproj/src/main/java/hibernate.cfg.xml
