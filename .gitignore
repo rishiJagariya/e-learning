@@ -9,4 +9,4 @@ elearningproj/*.project
 elearningproj/bin/
 elearningproj/.settings/
 elearningproj/target/
-elearningproj/src/main/java/hibernate.cfg.xml
+elearningproj/src/resources/database.properties
