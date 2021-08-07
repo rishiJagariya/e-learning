@@ -1,12 +1,6 @@
 package com.elr.dao;
 
-import com.elr.model.Auth;
-
 public interface DaoInterface {
-	
-	public Auth getAuth();     //will return auth(type, username, password)
-	public void addAuth();     //to add userAuth to database
-	
 	
 	/*  COMMENTS 
 	 * 
