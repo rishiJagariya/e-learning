@@ -99,6 +99,10 @@ public class Student {
 
 	@Embedded
 	private Auth auth;
+
+	public Object setUser;
+
+	public Object setUserName;
 	
 	
 	
