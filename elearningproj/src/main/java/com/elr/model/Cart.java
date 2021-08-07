@@ -6,12 +6,12 @@ import javax.persistence.*;
 @Entity
 public class Cart {
 
-	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int cartId;
 
 	@OneToOne(mappedBy = "Student")
-	@JoinColumn(name = "studentId")
-	private int studentId;
+	@JoinColumn(name = "userId")
+	private int userId;
 
 	@OneToMany(mappedBy = "Course")
 	@JoinColumn(name = "courseId")
@@ -21,15 +21,14 @@ public class Cart {
 	private int totalAmount;
 	private int discount;
 
-	public Cart()
-	{
-		
+	public Cart() {
+
 	}
-	
+
 	public Cart(int cartId, int studentId, List items, int totalAmount, int discount) {
 		super();
 		this.cartId = cartId;
-		this.studentId = studentId;
+		this.userId = userId;
 		this.items = items;
 		this.totalAmount = totalAmount;
 		this.discount = discount;
@@ -43,12 +42,12 @@ public class Cart {
 		this.cartId = cartId;
 	}
 
-	public int getStudentId() {
-		return studentId;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+	public void setUserId(int studentId) {
+		this.userId = studentId;
 	}
 
 	public List getItems() {
@@ -72,14 +71,13 @@ public class Cart {
 	}
 
 	public void setDiscount(int totalAmount) {
-		this.discount = (10*totalAmount)/100;
+		this.discount = (10 * totalAmount) / 100;
 	}
 
 	@Override
 	public String toString() {
-		return "Cart [cartId=" + cartId + ", studentId=" + studentId + ", items=" + items + ", totalAmount="
-				+ totalAmount + ", discount=" + discount + "]";
+		return "Cart [cartId=" + cartId + ", userId=" + userId + ", items=" + items + ", totalAmount=" + totalAmount
+				+ ", discount=" + discount + "]";
 	}
-	
 
 }

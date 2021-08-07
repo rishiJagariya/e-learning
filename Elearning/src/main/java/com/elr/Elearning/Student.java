@@ -2,7 +2,7 @@ package com.elr.Elearning;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Id;
@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-
+@Entity
 public class Student {
 	@Id
 	private int studentId;
@@ -26,7 +26,7 @@ public class Student {
 	private String username;
 	
 	@OneToMany(mappedBy = "Course")
-	private List enroll;
+	private List<Integer> enroll;
 	
 	@Override
 	public String toString() {
@@ -39,7 +39,7 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(int studentId, String studentName, String dob, String username, List enroll, Auth auth) {
+	public Student(int studentId, String studentName, String dob, String username, List<Integer> enroll, Auth auth) {
 		super();
 		this.studentId = studentId;
 		this.studentName = studentName;
@@ -81,11 +81,11 @@ public class Student {
 		this.username = username;
 	}
 
-	public List getEnroll() {
+	public List<Integer> getEnroll() {
 		return enroll;
 	}
 
-	public void setEnroll(List enroll) {
+	public void setEnroll(List<Integer> enroll) {
 		this.enroll = enroll;
 	}
 
