@@ -5,57 +5,40 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-
+@Table(name="Course")
 @Entity
 public class Course {
 
 	@Id
-	@OneToOne(mappedBy = "student")
+	@ManyToOne
 	@JoinColumn(name = "courseId")
 	private int courseId;
 
-	@OneToMany(mappedBy = "student")
+	@Column
 	private String courseName;
 
-	@OneToOne(mappedBy = "course")
-	@JoinColumn(name = "courseId")
+	@Column
 	private int fee;
-
-	@OneToOne(mappedBy = "course")
-	@JoinColumn(name = "courseId")
+	
+    @Column 
 	private int duration;
+	
+    @Column
 	private int rating;
 
-	@OneToMany(mappedBy = "course")
-	@JoinColumn(name = "course")
-	private int trainerId;
+	@ManyToOne
+	private int userId;
 
-	@Column(name = "course")
+	@Column
 	private String description;
 
-	@Column(name = "course")
+	@Column
 	private String category;
-
-	public Course() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Course(int courseId, String courseName, int fee, int duration, int rating, int trainerId, String description,
-			String category) {
-		super();
-		this.courseId = courseId;
-		this.courseName = courseName;
-		this.fee = fee;
-		this.duration = duration;
-		this.rating = rating;
-		this.trainerId = trainerId;
-		this.description = description;
-		this.category = category;
-	}
 
 	public int getCourseId() {
 		return courseId;
@@ -97,12 +80,12 @@ public class Course {
 		this.rating = rating;
 	}
 
-	public int getTrainerId() {
-		return trainerId;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setTrainerId(int trainerId) {
-		this.trainerId = trainerId;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public String getDescription() {
@@ -121,11 +104,31 @@ public class Course {
 		this.category = category;
 	}
 
+	public Course() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return "Course [courseId=" + courseId + ", courseName=" + courseName + ", fee=" + fee + ", duration=" + duration
-				+ ", rating=" + rating + ", trainerId=" + trainerId + ", description=" + description + ", category="
+				+ ", rating=" + rating + ", userId=" + userId + ", description=" + description + ", category="
 				+ category + "]";
 	}
+
+	public Course(int courseId, String courseName, int fee, int duration, int rating, int userId, String description,
+			String category) {
+		super();
+		this.courseId = courseId;
+		this.courseName = courseName;
+		this.fee = fee;
+		this.duration = duration;
+		this.rating = rating;
+		this.userId = userId;
+		this.description = description;
+		this.category = category;
+	}
+
+	
 
 }
