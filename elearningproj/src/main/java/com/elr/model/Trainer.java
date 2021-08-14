@@ -14,20 +14,33 @@ import javax.persistence.Table;
 public class Trainer extends Student{
 	
 	@OneToMany(mappedBy="Course")
-	private List courseOffered;
+	private List<Course> courseOffered;
 	public Trainer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Trainer(List courseOffered) {
+	
+	public Trainer(User user) {
+		this.setUsername(user.getUsername());
+		this.setPassword(user.getPassword());
+		this.setFname(user.getFname());
+		this.setLname(user.getLname());
+		this.setDob(user.getDob());
+		this.setPhoneNo(user.getPhoneNo());
+		this.setUserId(user.getUserId());
+		this.setUserType(user.getUserType());
+		this.courseOffered = null;
+	}
+	
+	public Trainer(List<Course> courseOffered) {
 		super();
 		this.courseOffered = courseOffered;
 	}
-	public List getCourseOffered() {
+	public List<Course> getCourseOffered() {
 		return courseOffered;
 	}
-	public void setCourseOffered(List courseOffered) {
-		this.courseOffered = courseOffered;
+	public void setCourseOffered(Course courseOffered) {
+		this.courseOffered.add(courseOffered);
 	}
 	@Override
 	public String toString() {

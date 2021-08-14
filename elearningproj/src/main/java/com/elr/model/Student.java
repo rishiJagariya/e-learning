@@ -14,14 +14,26 @@ import javax.persistence.Table;
 public class Student extends User {
 	
 	@OneToMany(mappedBy = "Course")
-	private List enroll;
+	private List<Course> enroll;
 
-	public List getEnroll() {
+	public List<Course> getEnroll() {
 		return enroll;
 	}
 
-	public void setEnroll(List enroll) {
-		this.enroll = enroll;
+	public void setEnroll(Course enroll) {
+		this.enroll.add(enroll);
+	}
+	
+	public Student(User user) {
+		this.setUsername(user.getUsername());
+		this.setPassword(user.getPassword());
+		this.setFname(user.getFname());
+		this.setLname(user.getLname());
+		this.setDob(user.getDob());
+		this.setPhoneNo(user.getPhoneNo());
+		this.setUserId(user.getUserId());
+		this.setUserType(user.getUserType());
+		this.enroll = null;
 	}
 
 	@Override
@@ -29,7 +41,7 @@ public class Student extends User {
 		return "Student [enroll=" + enroll + "]";
 	}
 
-	public Student(List enroll) {
+	public Student(List<Course> enroll) {
 		super();
 		this.enroll = enroll;
 	}
