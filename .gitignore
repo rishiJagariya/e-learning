@@ -10,3 +10,17 @@ elearningproj/bin/
 elearningproj/.settings/
 elearningproj/target/
 elearningproj/src/resources/database.properties
+
+
+
+frontend/node_modules
+
+# IDEs and editors
+frontend/.idea
+frontend/.project
+frontend/.classpath
+frontend/.c9/
+frontend/*.launch
+frontend/.settings/
+frontend/*.sublime-workspace
+
