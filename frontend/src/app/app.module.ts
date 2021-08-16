@@ -17,7 +17,8 @@ import { EditcourseComponent } from './editcourse/editcourse.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { TrainerprofileComponent } from './trainerprofile/trainerprofile.component';
-import { StudentprofileComponent } from './studentprofile/studentprofile.component'
+import { StudentprofileComponent } from './studentprofile/studentprofile.component';
+import { NgbdDropdownBasicComponent } from './ngbd-dropdown-basic/ngbd-dropdown-basic.component'
 const routes: Routes = []
 
 
@@ -37,7 +38,8 @@ const routes: Routes = []
     DeletecourseComponent,
     EditcourseComponent,
     TrainerprofileComponent,
-    StudentprofileComponent
+    StudentprofileComponent,
+    NgbdDropdownBasicComponent
   ],
   imports: [
     BrowserModule,
